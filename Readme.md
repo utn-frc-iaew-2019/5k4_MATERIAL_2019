@@ -1,10 +1,13 @@
 # Integración de Aplicaciones en Entorno Web
 
 ##Control de versiones
+
 gdoc:
+
 https://docs.google.com/document/d/1r0NeTn9XLAlrvNQCalXvJCV-q0n6-9ToiOwFtsRkEqY/edit?usp=sharing
 
 ppt:
+
 https://docs.google.com/presentation/d/1nMJ_MWflflgqDIoL3icP49sr1eVVqlwSf-h3apxAqiI/edit?usp=sharing
 
 ##Links 
