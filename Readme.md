@@ -1,6 +1,6 @@
 # Integración de Aplicaciones en Entorno Web
 
-##Control de versiones
+## Control de versiones
 
 gdoc:
 
@@ -10,7 +10,7 @@ ppt:
 
 https://docs.google.com/presentation/d/1nMJ_MWflflgqDIoL3icP49sr1eVVqlwSf-h3apxAqiI/edit?usp=sharing
 
-##Links 
+## Links 
 ### Slack
 
 https://5k4iaew2019.slack.com/messages/CH0TFRAM6/
