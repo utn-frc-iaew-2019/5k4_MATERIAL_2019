@@ -22,3 +22,8 @@ http://www.institucional.frc.utn.edu.ar/sistemas/noticias/ACA/Modalidades/2018/B
 ### Registrarse
 
 https://docs.google.com/spreadsheets/d/1bQSz5mPFTOUashuvMJLeyz5ZZkXKHqoKa1ui5x_H6Yo/edit?usp=sharing
+
+
+Maquina Virtual
+
+https://drive.google.com/uc?id=1ERg8AmKeTohEEjDPb3wsYEREwgYrOoAI&export=download 
