@@ -2,7 +2,7 @@
 
 ## Enunciado
 
-https://docs.google.com/presentation/d/1TkW10IZ9XddNg4IwFriqgw34W12YcICsLI3KuXnMubo/edit?usp=sharing
+https://docs.google.com/document/d/1b9UWYBenuETkJ-N-CphwE7xqy-nES4N0FT0wThlK4VQ/edit?usp=sharing
 
 ## Planilla de Grupos
 
