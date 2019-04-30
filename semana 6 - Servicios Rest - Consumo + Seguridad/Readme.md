@@ -5,6 +5,9 @@
 ### Jquery
 https://api.jquery.com/category/ajax/
 
+## CORS
+https://docs.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-2.2
+
 ## Servicios Rest - Seguridad
 
 https://docs.google.com/presentation/d/1_YTZryOQc7AEQ9SkS8edt-uyuqkY-B7ZENvZl-EI71w/edit?usp=sharing
