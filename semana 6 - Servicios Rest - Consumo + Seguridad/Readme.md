@@ -1,4 +1,4 @@
-# Integración de Aplicaciones en Entorno Web
+# IntegraciÃ³n de Aplicaciones en Entorno Web
 
 ## Consumo de Servicios
 
@@ -8,6 +8,10 @@ https://api.jquery.com/category/ajax/
 ## Servicios Rest - Seguridad
 
 https://docs.google.com/presentation/d/1_YTZryOQc7AEQ9SkS8edt-uyuqkY-B7ZENvZl-EI71w/edit?usp=sharing
+
+### OAuth 2.0 
+
+https://medium.com/@darutk/diagrams-and-movies-of-all-the-oauth-2-0-flows-194f3c3ade85
 
 ### Hypermedia - Libreria Nuget  
 
