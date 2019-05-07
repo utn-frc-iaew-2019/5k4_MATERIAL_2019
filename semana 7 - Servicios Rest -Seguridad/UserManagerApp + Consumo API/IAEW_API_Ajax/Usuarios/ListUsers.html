@@ -1,0 +1,29 @@
+﻿
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                method: "GET",
+                url: "http://localhost:65513/api/users/",
+                contentType: "application/json; charset=utf-8"
+            })
+            .done(function (response) {
+                $("#lista").append("<h1>Usuarios</h1>");
+                $.each(response, function(index, item) {
+                    $("#lista").append("<a>" + item.name + "</a><br>");
+                });
+                alert("Ejecuto Ok");
+            }).fail(function (msg) {
+                alert("Error");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="lista" class=""></div>
+</body>
+</html>
