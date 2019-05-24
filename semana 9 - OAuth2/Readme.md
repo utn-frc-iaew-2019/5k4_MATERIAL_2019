@@ -9,5 +9,5 @@ Pasos:
 1. Crear el client_id OAuth server (Google OAuth)
 2. Armar URL de redirección.
 3. Callback: que hace el OAuth Server del que se obtiene el code. 
-4. Con el code + client_id/client_secret vamos a consultar el token
-5. Consultamos datos del usuario.
+4. Con el code + client_id/client_secret vamos a consultar el access_token.
+5. Consultamos datos del usuario / consumir un servicio rest segurizado con OAuth 2.0.
