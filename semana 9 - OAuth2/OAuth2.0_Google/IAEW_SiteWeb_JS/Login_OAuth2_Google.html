@@ -1,0 +1,43 @@
+﻿
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Login Google</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // Agregamos evento click al boton login
+            $("#login_google").click(function () {
+                window.location = "www.google.com";
+            });
+
+            //Buscamos el accesstoken de la cookie del sitio
+            if ($.cookie("access_token")) {
+                $.ajax({
+                    method: "GET",
+                    url: "",
+                    contentType: "application/json; charset=utf-8",
+                    //Aca tenemos que mandar el access token
+                    header: { Authorization: "Bearer " }
+                })
+                    .done(function (response) {
+                        //En la respuesta buscar el nombre de usuario o mail.
+                        $("#nombre_usuario_google").val()
+                    }).fail(function (msg) {
+                        alert("Error");
+                    });
+            }
+
+        });
+    </script>
+</head>
+<body>
+    <a id="login_google" class="btn btn-primary" href="https://accounts.google.com/o/oauth2/v2/auth?client_id=105195994028-5i0265tl7cfod9lu1lfl3ef36p5r3t6q.apps.googleusercontent.com&response_type=code&scope=email&redirect_uri=http://localhost:65513/api/callback" role="button">Iniciar Sesión con Google</a>
+    <br />
+    <br />
+    <strong>Nombre de Usuario: </strong><div id="nombre_usuario_google"></div>
+</body>
+</html>
