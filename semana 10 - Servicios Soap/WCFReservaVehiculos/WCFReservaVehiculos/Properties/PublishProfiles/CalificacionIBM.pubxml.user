@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAjSDs3Y5ILEuL4Xi5EsUungAAAAACAAAAAAAQZgAAAAEAACAAAACIaHb6+57VnS0EPFw714h4/nKZ79Zdp2E0dkxd/O0htQAAAAAOgAAAAAIAACAAAADQQ1qusF+SKgz4Iis4dzT4tJ2JMzuYYfl7mKRcIh4BclAAAADd4bOl8YpSrW/HW2Tr1fwOsfPHBFopB0ah5Ki9+jYcWjq63CN4/Je84SeJ9lKrkE8QO4T1uCiBHuOfYyvZH4ORq+zvrP+gDve5/GxaUFXTqEAAAABKSFxofRjc+sdAbeNixANoQCpcSNRBdL00AgtkFydyKn1JL/koDp3iVHmKFLAxBlR+9+rpItYgaxvwNd/Gjxun</EncryptedPassword>
+    <_PublishTargetUrl>ftp://ec2-18-204-196-78.compute-1.amazonaws.com/CalificacionIBM</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>03/02/2015 09:32:26</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>03/02/2015 09:32:26</publishTime>
+    </File>
+    <File Include="bin/WCFExtrasPlus.dll">
+      <publishTime>06/07/2018 23:57:10</publishTime>
+    </File>
+    <File Include="bin/WCFReservaVehiculos.Business.dll">
+      <publishTime>06/18/2018 00:14:09</publishTime>
+    </File>
+    <File Include="bin/WCFReservaVehiculos.dll">
+      <publishTime>06/18/2018 00:57:02</publishTime>
+    </File>
+    <File Include="WCFReservaVehiculos.svc">
+      <publishTime>06/04/2018 21:28:50</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>06/18/2018 00:54:45</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,462 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ReservaVehiculosDataBaseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ReservaVehiculosDataBaseModelStoreContainer">
+    <EntitySet Name="Vehiculo" EntityType="ReservaVehiculosDataBaseModel.Store.Vehiculo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Reserva" EntityType="ReservaVehiculosDataBaseModel.Store.Reserva" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Ciudad" EntityType="ReservaVehiculosDataBaseModel.Store.Ciudad" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Pais" EntityType="ReservaVehiculosDataBaseModel.Store.Pais" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Transaccion" EntityType="ReservaVehiculosDataBaseModel.Store.Transaccion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Usuario" EntityType="ReservaVehiculosDataBaseModel.Store.Usuario" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VehiculoPorCiudad" EntityType="ReservaVehiculosDataBaseModel.Store.VehiculoPorCiudad" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="PaisEntityCiudadEntity" Association="ReservaVehiculosDataBaseModel.Store.PaisEntityCiudadEntity">
+      <End Role="PaisEntity" EntitySet="Pais" />
+      <End Role="CiudadEntity" EntitySet="Ciudad" />
+    </AssociationSet>
+    <AssociationSet Name="TransaccionEntityUsuarioEntity" Association="ReservaVehiculosDataBaseModel.Store.TransaccionEntityUsuarioEntity">
+      <End Role="TransaccionEntity" EntitySet="Transaccion" />
+      <End Role="UsuarioEntity" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CiudadEntityVehiculoPorCiudadEntity" Association="ReservaVehiculosDataBaseModel.Store.FK_CiudadEntityVehiculoPorCiudadEntity">
+      <End Role="CiudadEntity" EntitySet="Ciudad" />
+      <End Role="VehiculoPorCiudadEntity" EntitySet="VehiculoPorCiudad" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VehiculoPorCiudadEntityVehiculoEntity" Association="ReservaVehiculosDataBaseModel.Store.FK_VehiculoPorCiudadEntityVehiculoEntity">
+      <End Role="VehiculoEntity" EntitySet="Vehiculo" />
+      <End Role="VehiculoPorCiudadEntity" EntitySet="VehiculoPorCiudad" />
+    </AssociationSet>
+    <AssociationSet Name="VehiculoPorCiudadEntityReservaEntity" Association="ReservaVehiculosDataBaseModel.Store.VehiculoPorCiudadEntityReservaEntity">
+      <End Role="VehiculoPorCiudadEntity" EntitySet="VehiculoPorCiudad" />
+      <End Role="ReservaEntity" EntitySet="Reserva" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Vehiculo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Modelo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Marca" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Puntaje" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PrecioPorDia" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="TieneDireccion" Type="bit" Nullable="false" />
+    <Property Name="TieneAireAcon" Type="bit" Nullable="false" />
+    <Property Name="CantidadPuertas" Type="int" Nullable="false" />
+    <Property Name="TipoCambio" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Reserva">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CodigoReserva" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FechaReserva" Type="datetime" Nullable="false" />
+    <Property Name="UsuarioReserva" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TotalReserva" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="ApellidoNombreCliente" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NroDocumentoCliente" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LugarRetiro" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LugarDevolucion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FechaHoraRetiro" Type="datetime" Nullable="false" />
+    <Property Name="FechaHoraDevolucion" Type="datetime" Nullable="false" />
+    <Property Name="Estado" Type="int" Nullable="false" />
+    <Property Name="FechaCancelacion" Type="datetime" Nullable="true" />
+    <Property Name="UsuarioCancelacion" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="VehiculoPorCiudadId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ciudad">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PaisId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pais">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Transaccion">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Request" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Response" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UsuarioId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VehiculoPorCiudad">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CantidadDisponible" Type="int" Nullable="false" />
+    <Property Name="VehiculoId" Type="int" Nullable="false" />
+    <Property Name="CiudadId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="PaisEntityCiudadEntity">
+    <End Role="PaisEntity" Type="ReservaVehiculosDataBaseModel.Store.Pais" Multiplicity="1" />
+    <End Role="CiudadEntity" Type="ReservaVehiculosDataBaseModel.Store.Ciudad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PaisEntity">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CiudadEntity">
+        <PropertyRef Name="PaisId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TransaccionEntityUsuarioEntity">
+    <End Role="TransaccionEntity" Type="ReservaVehiculosDataBaseModel.Store.Transaccion" Multiplicity="*" />
+    <End Role="UsuarioEntity" Type="ReservaVehiculosDataBaseModel.Store.Usuario" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="UsuarioEntity">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TransaccionEntity">
+        <PropertyRef Name="UsuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CiudadEntityVehiculoPorCiudadEntity">
+    <End Role="CiudadEntity" Type="ReservaVehiculosDataBaseModel.Store.Ciudad" Multiplicity="1" />
+    <End Role="VehiculoPorCiudadEntity" Type="ReservaVehiculosDataBaseModel.Store.VehiculoPorCiudad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CiudadEntity">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VehiculoPorCiudadEntity">
+        <PropertyRef Name="CiudadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VehiculoPorCiudadEntityVehiculoEntity">
+    <End Role="VehiculoEntity" Type="ReservaVehiculosDataBaseModel.Store.Vehiculo" Multiplicity="1" />
+    <End Role="VehiculoPorCiudadEntity" Type="ReservaVehiculosDataBaseModel.Store.VehiculoPorCiudad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehiculoEntity">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VehiculoPorCiudadEntity">
+        <PropertyRef Name="VehiculoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VehiculoPorCiudadEntityReservaEntity">
+    <End Role="VehiculoPorCiudadEntity" Type="ReservaVehiculosDataBaseModel.Store.VehiculoPorCiudad" Multiplicity="1" />
+    <End Role="ReservaEntity" Type="ReservaVehiculosDataBaseModel.Store.Reserva" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehiculoPorCiudadEntity">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ReservaEntity">
+        <PropertyRef Name="VehiculoPorCiudadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ReservaVehiculosDataBaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ReservaVehiculosDataBaseEntities" annotation:LazyLoadingEnabled="false" >
+          <EntitySet Name="Vehiculo" EntityType="ReservaVehiculosDataBaseModel.VehiculoEntity" />
+          <EntitySet Name="Reserva" EntityType="ReservaVehiculosDataBaseModel.ReservaEntity" />
+          <EntitySet Name="Ciudad" EntityType="ReservaVehiculosDataBaseModel.CiudadEntity" />
+          <EntitySet Name="Pais" EntityType="ReservaVehiculosDataBaseModel.PaisEntity" />
+          <AssociationSet Name="PaisEntityCiudadEntity" Association="ReservaVehiculosDataBaseModel.PaisEntityCiudadEntity">
+            <End Role="PaisEntity" EntitySet="Pais" />
+            <End Role="CiudadEntity" EntitySet="Ciudad" />
+          </AssociationSet>
+          <EntitySet Name="Transaccion" EntityType="ReservaVehiculosDataBaseModel.TransaccionEntity" />
+          <EntitySet Name="Usuario" EntityType="ReservaVehiculosDataBaseModel.UsuarioEntity" />
+          <AssociationSet Name="TransaccionEntityUsuarioEntity" Association="ReservaVehiculosDataBaseModel.TransaccionEntityUsuarioEntity">
+            <End Role="TransaccionEntity" EntitySet="Transaccion" />
+            <End Role="UsuarioEntity" EntitySet="Usuario" />
+          </AssociationSet>
+          <EntitySet Name="VehiculoPorCiudad" EntityType="ReservaVehiculosDataBaseModel.VehiculoPorCiudadEntity" />
+          <AssociationSet Name="FK_CiudadEntityVehiculoPorCiudadEntity" Association="ReservaVehiculosDataBaseModel.FK_CiudadEntityVehiculoPorCiudadEntity">
+            <End Role="CiudadEntity" EntitySet="Ciudad" />
+            <End Role="VehiculoPorCiudadEntity" EntitySet="VehiculoPorCiudad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VehiculoPorCiudadEntityVehiculoEntity" Association="ReservaVehiculosDataBaseModel.FK_VehiculoPorCiudadEntityVehiculoEntity">
+            <End Role="VehiculoEntity" EntitySet="Vehiculo" />
+            <End Role="VehiculoPorCiudadEntity" EntitySet="VehiculoPorCiudad" />
+          </AssociationSet>
+          <AssociationSet Name="VehiculoPorCiudadEntityReservaEntity" Association="ReservaVehiculosDataBaseModel.VehiculoPorCiudadEntityReservaEntity">
+            <End Role="VehiculoPorCiudadEntity" EntitySet="VehiculoPorCiudad" />
+            <End Role="ReservaEntity" EntitySet="Reserva" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="VehiculoEntity">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Modelo" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Marca" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Puntaje" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="PrecioPorDia" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="TieneDireccion" Type="Boolean" Nullable="false" />
+          <Property Name="TieneAireAcon" Type="Boolean" Nullable="false" />
+          <Property Name="CantidadPuertas" Type="Int32" Nullable="false" />
+          <Property Name="TipoCambio" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="ReservaEntity">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="CodigoReserva" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="FechaReserva" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UsuarioReserva" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="TotalReserva" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="ApellidoNombreCliente" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="NroDocumentoCliente" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="LugarRetiro" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="LugarDevolucion" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="FechaHoraRetiro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FechaHoraDevolucion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Estado" Type="ReservaVehiculosDataBaseModel.EstadoReservaEnum" Nullable="false" />
+          <Property Name="FechaCancelacion" Type="DateTime" Nullable="true" Precision="3" />
+          <Property Name="UsuarioCancelacion" Type="String" Unicode="true" FixedLength="false" MaxLength="Max" />
+          <NavigationProperty Name="VehiculoPorCiudadEntity" Relationship="ReservaVehiculosDataBaseModel.VehiculoPorCiudadEntityReservaEntity" FromRole="ReservaEntity" ToRole="VehiculoPorCiudadEntity" />
+          <Property Name="VehiculoPorCiudadId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CiudadEntity">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="PaisEntity" Relationship="ReservaVehiculosDataBaseModel.PaisEntityCiudadEntity" FromRole="CiudadEntity" ToRole="PaisEntity" />
+          <Property Name="PaisId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PaisEntity">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <Association Name="PaisEntityCiudadEntity">
+          <End Type="ReservaVehiculosDataBaseModel.PaisEntity" Role="PaisEntity" Multiplicity="1" />
+          <End Type="ReservaVehiculosDataBaseModel.CiudadEntity" Role="CiudadEntity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaisEntity">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CiudadEntity">
+              <PropertyRef Name="PaisId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TransaccionEntity">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" annotation:StoreGeneratedPattern="None" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Request" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Response" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="UsuarioId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UsuarioEntity">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="TransaccionEntity" Relationship="ReservaVehiculosDataBaseModel.TransaccionEntityUsuarioEntity" FromRole="UsuarioEntity" ToRole="TransaccionEntity" />
+        </EntityType>
+        <Association Name="TransaccionEntityUsuarioEntity">
+          <End Type="ReservaVehiculosDataBaseModel.TransaccionEntity" Role="TransaccionEntity" Multiplicity="*" />
+          <End Type="ReservaVehiculosDataBaseModel.UsuarioEntity" Role="UsuarioEntity" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="UsuarioEntity">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TransaccionEntity">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EnumType Name="EstadoReservaEnum">
+          <Member Name="Activa" Value="1" />
+          <Member Name="Cancelada" Value="2" />
+        </EnumType>
+        <EntityType Name="VehiculoPorCiudadEntity">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CantidadDisponible" Type="Int32" Nullable="false" />
+          <Property Name="VehiculoId" Type="Int32" Nullable="false" />
+          <Property Name="CiudadId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CiudadEntity" Relationship="ReservaVehiculosDataBaseModel.FK_CiudadEntityVehiculoPorCiudadEntity" FromRole="VehiculoPorCiudadEntity" ToRole="CiudadEntity" />
+          <NavigationProperty Name="VehiculoEntity" Relationship="ReservaVehiculosDataBaseModel.FK_VehiculoPorCiudadEntityVehiculoEntity" FromRole="VehiculoPorCiudadEntity" ToRole="VehiculoEntity" />
+        </EntityType>
+        <Association Name="FK_CiudadEntityVehiculoPorCiudadEntity">
+          <End Type="ReservaVehiculosDataBaseModel.CiudadEntity" Role="CiudadEntity" Multiplicity="1" />
+          <End Type="ReservaVehiculosDataBaseModel.VehiculoPorCiudadEntity" Role="VehiculoPorCiudadEntity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CiudadEntity">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VehiculoPorCiudadEntity">
+              <PropertyRef Name="CiudadId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VehiculoPorCiudadEntityVehiculoEntity">
+          <End Type="ReservaVehiculosDataBaseModel.VehiculoEntity" Role="VehiculoEntity" Multiplicity="1" />
+          <End Type="ReservaVehiculosDataBaseModel.VehiculoPorCiudadEntity" Role="VehiculoPorCiudadEntity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VehiculoEntity">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VehiculoPorCiudadEntity">
+              <PropertyRef Name="VehiculoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="VehiculoPorCiudadEntityReservaEntity">
+          <End Type="ReservaVehiculosDataBaseModel.VehiculoPorCiudadEntity" Role="VehiculoPorCiudadEntity" Multiplicity="1" />
+          <End Type="ReservaVehiculosDataBaseModel.ReservaEntity" Role="ReservaEntity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VehiculoPorCiudadEntity">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ReservaEntity">
+              <PropertyRef Name="VehiculoPorCiudadId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ReservaVehiculosDataBaseModelStoreContainer" CdmEntityContainer="ReservaVehiculosDataBaseEntities">
+    <EntitySetMapping Name="Vehiculo">
+      <EntityTypeMapping TypeName="IsTypeOf(ReservaVehiculosDataBaseModel.VehiculoEntity)">
+        <MappingFragment StoreEntitySet="Vehiculo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+          <ScalarProperty Name="Puntaje" ColumnName="Puntaje" />
+          <ScalarProperty Name="PrecioPorDia" ColumnName="PrecioPorDia" />
+          <ScalarProperty Name="TieneDireccion" ColumnName="TieneDireccion" />
+          <ScalarProperty Name="TieneAireAcon" ColumnName="TieneAireAcon" />
+          <ScalarProperty Name="CantidadPuertas" ColumnName="CantidadPuertas" />
+          <ScalarProperty Name="TipoCambio" ColumnName="TipoCambio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reserva">
+      <EntityTypeMapping TypeName="IsTypeOf(ReservaVehiculosDataBaseModel.ReservaEntity)">
+        <MappingFragment StoreEntitySet="Reserva">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CodigoReserva" ColumnName="CodigoReserva" />
+          <ScalarProperty Name="FechaReserva" ColumnName="FechaReserva" />
+          <ScalarProperty Name="UsuarioReserva" ColumnName="UsuarioReserva" />
+          <ScalarProperty Name="TotalReserva" ColumnName="TotalReserva" />
+          <ScalarProperty Name="ApellidoNombreCliente" ColumnName="ApellidoNombreCliente" />
+          <ScalarProperty Name="NroDocumentoCliente" ColumnName="NroDocumentoCliente" />
+          <ScalarProperty Name="LugarRetiro" ColumnName="LugarRetiro" />
+          <ScalarProperty Name="LugarDevolucion" ColumnName="LugarDevolucion" />
+          <ScalarProperty Name="FechaHoraRetiro" ColumnName="FechaHoraRetiro" />
+          <ScalarProperty Name="FechaHoraDevolucion" ColumnName="FechaHoraDevolucion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="FechaCancelacion" ColumnName="FechaCancelacion" />
+          <ScalarProperty Name="UsuarioCancelacion" ColumnName="UsuarioCancelacion" />
+          <ScalarProperty Name="VehiculoPorCiudadId" ColumnName="VehiculoPorCiudadId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ciudad">
+      <EntityTypeMapping TypeName="IsTypeOf(ReservaVehiculosDataBaseModel.CiudadEntity)">
+        <MappingFragment StoreEntitySet="Ciudad">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="PaisId" ColumnName="PaisId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pais">
+      <EntityTypeMapping TypeName="IsTypeOf(ReservaVehiculosDataBaseModel.PaisEntity)">
+        <MappingFragment StoreEntitySet="Pais">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transaccion">
+      <EntityTypeMapping TypeName="IsTypeOf(ReservaVehiculosDataBaseModel.TransaccionEntity)">
+        <MappingFragment StoreEntitySet="Transaccion">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Request" ColumnName="Request" />
+          <ScalarProperty Name="Response" ColumnName="Response" />
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="IsTypeOf(ReservaVehiculosDataBaseModel.UsuarioEntity)">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehiculoPorCiudad">
+      <EntityTypeMapping TypeName="IsTypeOf(ReservaVehiculosDataBaseModel.VehiculoPorCiudadEntity)">
+        <MappingFragment StoreEntitySet="VehiculoPorCiudad">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CantidadDisponible" ColumnName="CantidadDisponible" />
+          <ScalarProperty Name="VehiculoId" ColumnName="VehiculoId" />
+          <ScalarProperty Name="CiudadId" ColumnName="CiudadId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

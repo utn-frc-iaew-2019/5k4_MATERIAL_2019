@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.539
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFReservaVehiculos", "WCFReservaVehiculos\WCFReservaVehiculos.csproj", "{AE8566A5-1A58-4D20-BCD0-240D3D3D0476}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFReservaVehiculos.Business", "WCFReservaVehiculos.Business\WCFReservaVehiculos.Business.csproj", "{2EB815EF-6CFD-4AEF-A609-751198B13904}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{3D0DA3AD-72F0-4E3F-8C34-89E47C51FA7E}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE8566A5-1A58-4D20-BCD0-240D3D3D0476}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE8566A5-1A58-4D20-BCD0-240D3D3D0476}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE8566A5-1A58-4D20-BCD0-240D3D3D0476}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE8566A5-1A58-4D20-BCD0-240D3D3D0476}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EB815EF-6CFD-4AEF-A609-751198B13904}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EB815EF-6CFD-4AEF-A609-751198B13904}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EB815EF-6CFD-4AEF-A609-751198B13904}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EB815EF-6CFD-4AEF-A609-751198B13904}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ACBFA130-84BD-4284-A784-D82198FA4E15}
+	EndGlobalSection
+EndGlobal

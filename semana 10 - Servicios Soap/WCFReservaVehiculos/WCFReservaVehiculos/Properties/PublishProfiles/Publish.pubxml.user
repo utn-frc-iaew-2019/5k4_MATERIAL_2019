@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>ftp://ec2-18-204-196-78.compute-1.amazonaws.com/Turicor</_PublishTargetUrl>
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAjSDs3Y5ILEuL4Xi5EsUungAAAAACAAAAAAAQZgAAAAEAACAAAAC9C25Wy3tOKqeVW7U67i+AyOUmVEu2LJkmhTOnFq82LAAAAAAOgAAAAAIAACAAAAC4/Y5l1aRqhCKahqNxLcvaN2axBjm3g7bCs1y3WNYV2FAAAABOluFeXVs6zEFDLxmXrr+KY2z0SV76Y+15sikiUa7YYA29DRKQjVD6U+/re1L91ii7/GY9tD6gpVAeBY+a8lcUnYqXCV8MnKewrGo3k4+W2UAAAAAeb5O1caGvGfB9Sbw+fRrNHkg/D9QPFocxIMPwddFNzxYdBAA4Ti2JGQUQ7Pq/BHdqeJotpSGJbu/EjmyJE3EG</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="App_Data/ReservaVehiculosDataBase.mdf">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="App_Data/ReservaVehiculosDataBase_log.ldf">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/App_Data/ReservaVehiculosDataBase.mdf">
+      <publishTime>09/06/2016 01:06:41</publishTime>
+    </File>
+    <File Include="bin/App_Data/ReservaVehiculosDataBase_log.ldf">
+      <publishTime>09/06/2016 01:06:41</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>03/02/2015 09:32:26</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>03/02/2015 09:32:26</publishTime>
+    </File>
+    <File Include="bin/WCFExtrasPlus.dll">
+      <publishTime>06/07/2018 23:57:10</publishTime>
+    </File>
+    <File Include="bin/WCFReservaVehiculos.Business.dll">
+      <publishTime>06/18/2018 00:14:09</publishTime>
+    </File>
+    <File Include="bin/WCFReservaVehiculos.dll">
+      <publishTime>06/18/2018 00:40:52</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="ReservaVehiculosModel.edmx.diagram">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="WCFReservaVehiculos.svc">
+      <publishTime>06/04/2018 21:28:50</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>06/18/2018 00:40:56</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ba57cd16ed0b48c990355f0b9c9d09a7" Name="Diagram1" >
+        <EntityTypeShape EntityType="ReservaVehiculosDataBaseModel.VehiculoEntity" Width="2.625" PointX="0.75" PointY="0.5" />
+        <EntityTypeShape EntityType="ReservaVehiculosDataBaseModel.ReservaEntity" Width="2.75" PointX="4.125" PointY="0.625" />
+        <EntityTypeShape EntityType="ReservaVehiculosDataBaseModel.CiudadEntity" Width="1.5" PointX="4.875" PointY="6" />
+        <EntityTypeShape EntityType="ReservaVehiculosDataBaseModel.PaisEntity" Width="1.5" PointX="0.875" PointY="7.375" />
+        <AssociationConnector Association="ReservaVehiculosDataBaseModel.PaisEntityCiudadEntity" />
+        <EntityTypeShape EntityType="ReservaVehiculosDataBaseModel.TransaccionEntity" Width="1.5" PointX="7.125" PointY="3.875" />
+        <EntityTypeShape EntityType="ReservaVehiculosDataBaseModel.UsuarioEntity" Width="1.5" PointX="7" PointY="1.25" />
+        <AssociationConnector Association="ReservaVehiculosDataBaseModel.TransaccionEntityUsuarioEntity" />
+        <EntityTypeShape EntityType="ReservaVehiculosDataBaseModel.VehiculoPorCiudadEntity" Width="2.625" PointX="0.625" PointY="4.125" />
+        <AssociationConnector Association="ReservaVehiculosDataBaseModel.FK_CiudadEntityVehiculoPorCiudadEntity" />
+        <AssociationConnector Association="ReservaVehiculosDataBaseModel.FK_VehiculoPorCiudadEntityVehiculoEntity" />
+        <AssociationConnector Association="ReservaVehiculosDataBaseModel.VehiculoPorCiudadEntityReservaEntity" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
