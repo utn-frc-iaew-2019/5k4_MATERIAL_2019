@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:intf="http://webservices.javapostsforlearning.arpit.org" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:impl="http://webservices.javapostsforlearning.arpit.org" targetNamespace="http://webservices.javapostsforlearning.arpit.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://webservices.javapostsforlearning.arpit.org">
+      <xsd:element name="sayHelloWorld">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="name" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="sayHelloWorldResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="sayHelloWorldReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="sayHelloWorldRequest">
+    <wsdl:part name="parameters" element="impl:sayHelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="sayHelloWorldResponse">
+    <wsdl:part name="parameters" element="impl:sayHelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:portType name="HelloWorld">
+    <wsdl:operation name="sayHelloWorld">
+      <wsdl:input name="sayHelloWorldRequest" message="impl:sayHelloWorldRequest" />
+      <wsdl:output name="sayHelloWorldResponse" message="impl:sayHelloWorldResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HelloWorldSoapBinding" type="impl:HelloWorld">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="sayHelloWorld">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="sayHelloWorldRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="sayHelloWorldResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HelloWorldService">
+    <wsdl:port name="HelloWorld" binding="impl:HelloWorldSoapBinding">
+      <wsdlsoap:address location="http://localhost:8080/ServicioSoap_Ejemplo/services/HelloWorld" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,7 @@
+C:\IAEW_2019\5k4_MATERIAL_2019\semana 10 - Servicios Soap\Net_ConsumidorSoap\ConsumidorSoap\bin\Debug\ConsumidorSoap.exe.config
+C:\IAEW_2019\5k4_MATERIAL_2019\semana 10 - Servicios Soap\Net_ConsumidorSoap\ConsumidorSoap\bin\Debug\ConsumidorSoap.exe
+C:\IAEW_2019\5k4_MATERIAL_2019\semana 10 - Servicios Soap\Net_ConsumidorSoap\ConsumidorSoap\bin\Debug\ConsumidorSoap.pdb
+C:\IAEW_2019\5k4_MATERIAL_2019\semana 10 - Servicios Soap\Net_ConsumidorSoap\ConsumidorSoap\obj\Debug\ConsumidorSoap.csprojAssemblyReference.cache
+C:\IAEW_2019\5k4_MATERIAL_2019\semana 10 - Servicios Soap\Net_ConsumidorSoap\ConsumidorSoap\obj\Debug\ConsumidorSoap.csproj.CoreCompileInputs.cache
+C:\IAEW_2019\5k4_MATERIAL_2019\semana 10 - Servicios Soap\Net_ConsumidorSoap\ConsumidorSoap\obj\Debug\ConsumidorSoap.exe
+C:\IAEW_2019\5k4_MATERIAL_2019\semana 10 - Servicios Soap\Net_ConsumidorSoap\ConsumidorSoap\obj\Debug\ConsumidorSoap.pdb

@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WCFReservaVehiculos" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/WCFReservaVehiculos.Business.Entities" />
+      <xs:element name="ConsultarCiudades">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WCFReservaVehiculos.Business.Entities" minOccurs="0" name="ConsultarCiudadesRequest" nillable="true" type="q1:ConsultarCiudadesRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ConsultarCiudadesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WCFReservaVehiculos.Business.Entities" minOccurs="0" name="ConsultarCiudadesResult" nillable="true" type="q2:ConsultarCiudadesResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ConsultarPaises">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ConsultarPaisesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WCFReservaVehiculos.Business.Entities" minOccurs="0" name="ConsultarPaisesResult" nillable="true" type="q3:ConsultarPaisesResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ConsultarVehiculosDisponibles">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WCFReservaVehiculos.Business.Entities" minOccurs="0" name="ConsultarVehiculosRequest" nillable="true" type="q4:ConsultarVehiculosRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ConsultarVehiculosDisponiblesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WCFReservaVehiculos.Business.Entities" minOccurs="0" name="ConsultarVehiculosDisponiblesResult" nillable="true" type="q5:ConsultarVehiculosDisponiblesResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReservarVehiculo">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WCFReservaVehiculos.Business.Entities" minOccurs="0" name="ReservarVehiculoRequest" nillable="true" type="q6:ReservarVehiculoRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReservarVehiculoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WCFReservaVehiculos.Business.Entities" minOccurs="0" name="ReservarVehiculoResult" nillable="true" type="q7:ReservarVehiculoResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ConsultarReserva">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WCFReservaVehiculos.Business.Entities" minOccurs="0" name="ConsultarReservaRequest" nillable="true" type="q8:ConsultarReservasRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ConsultarReservaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WCFReservaVehiculos.Business.Entities" minOccurs="0" name="ConsultarReservaResult" nillable="true" type="q9:ConsultarReservasResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CancelarReserva">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WCFReservaVehiculos.Business.Entities" minOccurs="0" name="CancelarReservaRequest" nillable="true" type="q10:CancelarReservaRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CancelarReservaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/WCFReservaVehiculos.Business.Entities" minOccurs="0" name="CancelarReservaResult" nillable="true" type="q11:CancelarReservaResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WCFReservaVehiculos.Business.Entities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WCFReservaVehiculos.Business.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/WCFReservaVehiculos.Business.DataBaseModel" />
+      <xs:complexType name="ConsultarCiudadesRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IdPais" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ConsultarCiudadesRequest" nillable="true" type="tns:ConsultarCiudadesRequest" />
+      <xs:complexType name="ConsultarCiudadesResponse">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WCFReservaVehiculos.Business.DataBaseModel" minOccurs="0" name="Ciudades" nillable="true" type="q1:ArrayOfCiudadEntity" />
+          <xs:element minOccurs="0" name="TimeStamp" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ConsultarCiudadesResponse" nillable="true" type="tns:ConsultarCiudadesResponse" />
+      <xs:complexType name="ConsultarPaisesResponse">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WCFReservaVehiculos.Business.DataBaseModel" minOccurs="0" name="Paises" nillable="true" type="q2:ArrayOfPaisEntity" />
+          <xs:element minOccurs="0" name="TimeStamp" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ConsultarPaisesResponse" nillable="true" type="tns:ConsultarPaisesResponse" />
+      <xs:complexType name="ConsultarVehiculosRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IdCiudad" type="xs:int" />
+          <xs:element minOccurs="0" name="FechaHoraRetiro" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FechaHoraDevolucion" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ConsultarVehiculosRequest" nillable="true" type="tns:ConsultarVehiculosRequest" />
+      <xs:complexType name="ConsultarVehiculosDisponiblesResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TimeStamp" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="VehiculosEncontrados" nillable="true" type="tns:ArrayOfVehiculoModel" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ConsultarVehiculosDisponiblesResponse" nillable="true" type="tns:ConsultarVehiculosDisponiblesResponse" />
+      <xs:complexType name="ArrayOfVehiculoModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="VehiculoModel" nillable="true" type="tns:VehiculoModel" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfVehiculoModel" nillable="true" type="tns:ArrayOfVehiculoModel" />
+      <xs:complexType name="VehiculoModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CantidadDisponible" type="xs:int" />
+          <xs:element minOccurs="0" name="CantidadPuertas" type="xs:int" />
+          <xs:element minOccurs="0" name="CiudadId" type="xs:int" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Marca" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Modelo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PrecioPorDia" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Puntaje" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TieneAireAcon" type="xs:boolean" />
+          <xs:element minOccurs="0" name="TieneDireccion" type="xs:boolean" />
+          <xs:element minOccurs="0" name="TipoCambio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VehiculoCiudadId" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="VehiculoModel" nillable="true" type="tns:VehiculoModel" />
+      <xs:complexType name="ReservarVehiculoRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ApellidoNombreCliente" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FechaHoraDevolucion" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FechaHoraRetiro" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="IdVehiculoCiudad" type="xs:int" />
+          <xs:element minOccurs="0" name="LugarDevolucion" type="tns:LugarRetiroDevolucion" />
+          <xs:element minOccurs="0" name="LugarRetiro" type="tns:LugarRetiroDevolucion" />
+          <xs:element minOccurs="0" name="NroDocumentoCliente" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ReservarVehiculoRequest" nillable="true" type="tns:ReservarVehiculoRequest" />
+      <xs:simpleType name="LugarRetiroDevolucion">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Aeropuerto" />
+          <xs:enumeration value="TerminalBuses" />
+          <xs:enumeration value="Hotel" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="LugarRetiroDevolucion" nillable="true" type="tns:LugarRetiroDevolucion" />
+      <xs:complexType name="ReservarVehiculoResponse">
+        <xs:sequence>
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WCFReservaVehiculos.Business.DataBaseModel" minOccurs="0" name="Reserva" nillable="true" type="q3:ReservaEntity" />
+          <xs:element minOccurs="0" name="TimeStamp" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ReservarVehiculoResponse" nillable="true" type="tns:ReservarVehiculoResponse" />
+      <xs:complexType name="ConsultarReservasRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodigoReserva" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ConsultarReservasRequest" nillable="true" type="tns:ConsultarReservasRequest" />
+      <xs:complexType name="ConsultarReservasResponse">
+        <xs:sequence>
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WCFReservaVehiculos.Business.DataBaseModel" minOccurs="0" name="Reserva" nillable="true" type="q4:ReservaEntity" />
+          <xs:element minOccurs="0" name="TimeStamp" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ConsultarReservasResponse" nillable="true" type="tns:ConsultarReservasResponse" />
+      <xs:complexType name="CancelarReservaRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodigoReserva" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CancelarReservaRequest" nillable="true" type="tns:CancelarReservaRequest" />
+      <xs:complexType name="CancelarReservaResponse">
+        <xs:sequence>
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WCFReservaVehiculos.Business.DataBaseModel" minOccurs="0" name="Reserva" nillable="true" type="q5:ReservaEntity" />
+          <xs:element minOccurs="0" name="TimeStamp" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CancelarReservaResponse" nillable="true" type="tns:CancelarReservaResponse" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ServicioWeb" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ServicioWeb" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="Credentials">
+        <xs:sequence>
+          <xs:element name="UserName" nillable="true" type="xs:string" />
+          <xs:element name="Password" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Credentials" nillable="true" type="tns:Credentials" />
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/ServicioWeb" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ServicioWeb" name="Credentials" nillable="true" type="q1:Credentials" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WCFReservaVehiculos.Business.DataBaseModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WCFReservaVehiculos.Business.DataBaseModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xs:complexType name="ArrayOfCiudadEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="CiudadEntity" nillable="true" type="tns:CiudadEntity" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfCiudadEntity" nillable="true" type="tns:ArrayOfCiudadEntity" />
+      <xs:complexType name="CiudadEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PaisEntity" nillable="true" type="tns:PaisEntity" />
+          <xs:element minOccurs="0" name="PaisId" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CiudadEntity" nillable="true" type="tns:CiudadEntity" />
+      <xs:complexType name="PaisEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="PaisEntity" nillable="true" type="tns:PaisEntity" />
+      <xs:complexType name="ArrayOfPaisEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="PaisEntity" nillable="true" type="tns:PaisEntity" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfPaisEntity" nillable="true" type="tns:ArrayOfPaisEntity" />
+      <xs:complexType name="ReservaEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ApellidoNombreCliente" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodigoReserva" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Estado" type="tns:EstadoReservaEnum" />
+          <xs:element minOccurs="0" name="FechaCancelacion" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FechaHoraDevolucion" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FechaHoraRetiro" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FechaReserva" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="LugarDevolucion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LugarRetiro" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NroDocumentoCliente" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TotalReserva" type="xs:decimal" />
+          <xs:element minOccurs="0" name="UsuarioCancelacion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UsuarioReserva" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VehiculoPorCiudadEntity" nillable="true" type="tns:VehiculoPorCiudadEntity" />
+          <xs:element minOccurs="0" name="VehiculoPorCiudadId" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ReservaEntity" nillable="true" type="tns:ReservaEntity" />
+      <xs:simpleType name="EstadoReservaEnum">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Activa">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Cancelada">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="EstadoReservaEnum" nillable="true" type="tns:EstadoReservaEnum" />
+      <xs:complexType name="VehiculoPorCiudadEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CantidadDisponible" type="xs:int" />
+          <xs:element minOccurs="0" name="CiudadEntity" nillable="true" type="tns:CiudadEntity" />
+          <xs:element minOccurs="0" name="CiudadId" type="xs:int" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="VehiculoEntity" nillable="true" type="tns:VehiculoEntity" />
+          <xs:element minOccurs="0" name="VehiculoId" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="VehiculoPorCiudadEntity" nillable="true" type="tns:VehiculoPorCiudadEntity" />
+      <xs:complexType name="VehiculoEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CantidadPuertas" type="xs:int" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Marca" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Modelo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PrecioPorDia" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Puntaje" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TieneAireAcon" type="xs:boolean" />
+          <xs:element minOccurs="0" name="TieneDireccion" type="xs:boolean" />
+          <xs:element minOccurs="0" name="TipoCambio" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="VehiculoEntity" nillable="true" type="tns:VehiculoEntity" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WCFReservaVehiculos.Business.ExceptionHandling" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WCFReservaVehiculos.Business.ExceptionHandling" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="StatusResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ErrorCode" type="xs:int" />
+          <xs:element minOccurs="0" name="ErrorDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="InnerExceptionDescription" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="StatusResponse" nillable="true" type="tns:StatusResponse" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="IWCFReservaVehiculos_ConsultarCiudades_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarCiudades" />
+  </wsdl:message>
+  <wsdl:message name="IWCFReservaVehiculos_ConsultarCiudades_InputMessage_Headers">
+    <wsdl:part name="Credentials" element="Credentials" />
+  </wsdl:message>
+  <wsdl:message name="IWCFReservaVehiculos_ConsultarCiudades_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarCiudadesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFReservaVehiculos_ConsultarCiudades_StatusResponseFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/WCFReservaVehiculos.Business.ExceptionHandling" name="detail" element="q1:StatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFReservaVehiculos_ConsultarPaises_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarPaises" />
+  </wsdl:message>
+  <wsdl:message name="IWCFReservaVehiculos_ConsultarPaises_InputMessage_Headers">
+    <wsdl:part name="Credentials" element="Credentials" />
+  </wsdl:message>
+  <wsdl:message name="IWCFReservaVehiculos_ConsultarPaises_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarPaisesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFReservaVehiculos_ConsultarPaises_StatusResponseFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/WCFReservaVehiculos.Business.ExceptionHandling" name="detail" element="q2:StatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFReservaVehiculos_ConsultarVehiculosDisponibles_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarVehiculosDisponibles" />
+  </wsdl:message>
+  <wsdl:message name="IWCFReservaVehiculos_ConsultarVehiculosDisponibles_InputMessage_Headers">
+    <wsdl:part name="Credentials" element="Credentials" />
+  </wsdl:message>
+  <wsdl:message name="IWCFReservaVehiculos_ConsultarVehiculosDisponibles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarVehiculosDisponiblesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFReservaVehiculos_ConsultarVehiculosDisponibles_StatusResponseFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/WCFReservaVehiculos.Business.ExceptionHandling" name="detail" element="q3:StatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFReservaVehiculos_ReservarVehiculo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReservarVehiculo" />
+  </wsdl:message>
+  <wsdl:message name="IWCFReservaVehiculos_ReservarVehiculo_InputMessage_Headers">
+    <wsdl:part name="Credentials" element="Credentials" />
+  </wsdl:message>
+  <wsdl:message name="IWCFReservaVehiculos_ReservarVehiculo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReservarVehiculoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFReservaVehiculos_ReservarVehiculo_StatusResponseFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/WCFReservaVehiculos.Business.ExceptionHandling" name="detail" element="q4:StatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFReservaVehiculos_ConsultarReserva_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarReserva" />
+  </wsdl:message>
+  <wsdl:message name="IWCFReservaVehiculos_ConsultarReserva_InputMessage_Headers">
+    <wsdl:part name="Credentials" element="Credentials" />
+  </wsdl:message>
+  <wsdl:message name="IWCFReservaVehiculos_ConsultarReserva_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarReservaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFReservaVehiculos_ConsultarReserva_StatusResponseFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/WCFReservaVehiculos.Business.ExceptionHandling" name="detail" element="q5:StatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFReservaVehiculos_CancelarReserva_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelarReserva" />
+  </wsdl:message>
+  <wsdl:message name="IWCFReservaVehiculos_CancelarReserva_InputMessage_Headers">
+    <wsdl:part name="Credentials" element="Credentials" />
+  </wsdl:message>
+  <wsdl:message name="IWCFReservaVehiculos_CancelarReserva_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelarReservaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFReservaVehiculos_CancelarReserva_StatusResponseFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/WCFReservaVehiculos.Business.ExceptionHandling" name="detail" element="q6:StatusResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IWCFReservaVehiculos">
+    <wsdl:operation name="ConsultarCiudades">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFReservaVehiculos/ConsultarCiudades" message="tns:IWCFReservaVehiculos_ConsultarCiudades_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFReservaVehiculos/ConsultarCiudadesResponse" message="tns:IWCFReservaVehiculos_ConsultarCiudades_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWCFReservaVehiculos/ConsultarCiudadesStatusResponseFault" name="StatusResponseFault" message="tns:IWCFReservaVehiculos_ConsultarCiudades_StatusResponseFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPaises">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFReservaVehiculos/ConsultarPaises" message="tns:IWCFReservaVehiculos_ConsultarPaises_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFReservaVehiculos/ConsultarPaisesResponse" message="tns:IWCFReservaVehiculos_ConsultarPaises_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWCFReservaVehiculos/ConsultarPaisesStatusResponseFault" name="StatusResponseFault" message="tns:IWCFReservaVehiculos_ConsultarPaises_StatusResponseFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarVehiculosDisponibles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFReservaVehiculos/ConsultarVehiculosDisponibles" message="tns:IWCFReservaVehiculos_ConsultarVehiculosDisponibles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFReservaVehiculos/ConsultarVehiculosDisponiblesResponse" message="tns:IWCFReservaVehiculos_ConsultarVehiculosDisponibles_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWCFReservaVehiculos/ConsultarVehiculosDisponiblesStatusResponseFault" name="StatusResponseFault" message="tns:IWCFReservaVehiculos_ConsultarVehiculosDisponibles_StatusResponseFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReservarVehiculo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFReservaVehiculos/ReservarVehiculo" message="tns:IWCFReservaVehiculos_ReservarVehiculo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFReservaVehiculos/ReservarVehiculoResponse" message="tns:IWCFReservaVehiculos_ReservarVehiculo_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWCFReservaVehiculos/ReservarVehiculoStatusResponseFault" name="StatusResponseFault" message="tns:IWCFReservaVehiculos_ReservarVehiculo_StatusResponseFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarReserva">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFReservaVehiculos/ConsultarReserva" message="tns:IWCFReservaVehiculos_ConsultarReserva_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFReservaVehiculos/ConsultarReservaResponse" message="tns:IWCFReservaVehiculos_ConsultarReserva_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWCFReservaVehiculos/ConsultarReservaStatusResponseFault" name="StatusResponseFault" message="tns:IWCFReservaVehiculos_ConsultarReserva_StatusResponseFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelarReserva">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFReservaVehiculos/CancelarReserva" message="tns:IWCFReservaVehiculos_CancelarReserva_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFReservaVehiculos/CancelarReservaResponse" message="tns:IWCFReservaVehiculos_CancelarReserva_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWCFReservaVehiculos/CancelarReservaStatusResponseFault" name="StatusResponseFault" message="tns:IWCFReservaVehiculos_CancelarReserva_StatusResponseFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IWCFReservaVehiculos" type="tns:IWCFReservaVehiculos">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsultarCiudades">
+      <soap:operation soapAction="http://tempuri.org/IWCFReservaVehiculos/ConsultarCiudades" style="document" />
+      <wsdl:input>
+        <soap:header message="tns:IWCFReservaVehiculos_ConsultarCiudades_InputMessage_Headers" part="Credentials" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="StatusResponseFault">
+        <soap:fault use="literal" name="StatusResponseFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPaises">
+      <soap:operation soapAction="http://tempuri.org/IWCFReservaVehiculos/ConsultarPaises" style="document" />
+      <wsdl:input>
+        <soap:header message="tns:IWCFReservaVehiculos_ConsultarPaises_InputMessage_Headers" part="Credentials" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="StatusResponseFault">
+        <soap:fault use="literal" name="StatusResponseFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarVehiculosDisponibles">
+      <soap:operation soapAction="http://tempuri.org/IWCFReservaVehiculos/ConsultarVehiculosDisponibles" style="document" />
+      <wsdl:input>
+        <soap:header message="tns:IWCFReservaVehiculos_ConsultarVehiculosDisponibles_InputMessage_Headers" part="Credentials" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="StatusResponseFault">
+        <soap:fault use="literal" name="StatusResponseFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReservarVehiculo">
+      <soap:operation soapAction="http://tempuri.org/IWCFReservaVehiculos/ReservarVehiculo" style="document" />
+      <wsdl:input>
+        <soap:header message="tns:IWCFReservaVehiculos_ReservarVehiculo_InputMessage_Headers" part="Credentials" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="StatusResponseFault">
+        <soap:fault use="literal" name="StatusResponseFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarReserva">
+      <soap:operation soapAction="http://tempuri.org/IWCFReservaVehiculos/ConsultarReserva" style="document" />
+      <wsdl:input>
+        <soap:header message="tns:IWCFReservaVehiculos_ConsultarReserva_InputMessage_Headers" part="Credentials" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="StatusResponseFault">
+        <soap:fault use="literal" name="StatusResponseFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelarReserva">
+      <soap:operation soapAction="http://tempuri.org/IWCFReservaVehiculos/CancelarReserva" style="document" />
+      <wsdl:input>
+        <soap:header message="tns:IWCFReservaVehiculos_CancelarReserva_InputMessage_Headers" part="Credentials" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="StatusResponseFault">
+        <soap:fault use="literal" name="StatusResponseFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WCFReservaVehiculos">
+    <wsdl:port name="BasicHttpBinding_IWCFReservaVehiculos" binding="tns:BasicHttpBinding_IWCFReservaVehiculos">
+      <soap:address location="http://rubenromero-001-site1.itempurl.com/WCFReservaVehiculos.svc/basic" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
